@@ -28,6 +28,9 @@ void main() {
     test('123', () {
       expect(123.toWords(), 'one hundred and twenty three');
     });
+    test('1000', () {
+      expect(1000.toWords(), 'one thousand');
+    });
     test('1001', () {
       expect(1001.toWords(), 'one thousand and one');
     });
@@ -39,7 +42,10 @@ void main() {
     });
     test('1000001', () {
       expect(1000001.toWords(), 'one million and one');
-    }); 
+    });
+    test('1001001', () {
+      expect(1001001.toWords(), 'one million one thousand and one');
+    });
     test('-1000001', () {
       expect((-10000010).toWords(), 'minus ten million and ten');
     });
@@ -75,6 +81,9 @@ void main() {
     });
     test('123', () {
       expect(123.toWordsOrdinal(), 'one hundred and twenty third');
+    });
+    test('1000', () {
+      expect(1000.toWordsOrdinal(), 'one thousandth');
     });
     test('1001', () {
       expect(1001.toWordsOrdinal(), 'one thousand and first');

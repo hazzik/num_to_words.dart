@@ -1,7 +1,4 @@
-import 'dart:ffi';
 import 'dart:math';
-
-import 'dart:wasm';
 
 final List<String> _units = [
   '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 
@@ -42,8 +39,7 @@ void _collectPartsUnderAThousand(num n,List<String> parts, [bool addAnd = false,
     n %= 100;
     addAnd |= n > 0;
   }
-  if (addAnd) parts.add('and');
-  
+  if (addAnd && n > 0) parts.add('and');
   if (n >= 20) {
     parts.add(_tens[n ~/ 10]);
     n %= 10;
