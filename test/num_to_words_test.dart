@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:num_to_words/num_to_words.dart';
 import 'package:test/test.dart';
@@ -43,6 +42,55 @@ void main() {
     }); 
     test('-1000001', () {
       expect((-10000010).toWords(), 'minus ten million and ten');
+    });
+  });
+
+  group('english ordinal', () {
+    test('0', () {
+      expect(0.toWordsOrdinal(), 'zeroth');
+    }); 
+    test('1', () {
+      expect(1.toWordsOrdinal(), 'first');
+    }); 
+    test('2', () {
+      expect(2.toWordsOrdinal(), 'second');
+    }); 
+    test('3', () {
+      expect(3.toWordsOrdinal(), 'third');
+    }); 
+    test('10', () {
+      expect(10.toWordsOrdinal(), 'tenth');
+    });
+    test('12', () {
+      expect(12.toWordsOrdinal(), 'twelfth');
+    });
+    test('20', () {
+      expect(20.toWordsOrdinal(), 'twentieth');
+    });
+    test('21', () {
+      expect(21.toWordsOrdinal(), 'twenty first');
+    });
+    test('100', () {
+      expect(100.toWordsOrdinal(), 'one hundredth');
+    });
+    test('123', () {
+      expect(123.toWordsOrdinal(), 'one hundred and twenty third');
+    });
+    test('1001', () {
+      expect(1001.toWordsOrdinal(), 'one thousand and first');
+    });
+    test('1234', () {
+      expect(1234.toWordsOrdinal(), 'one thousand two hundred and thirty fourth');
+    });
+    test('12345', () {
+      expect(12345.toWordsOrdinal(), 'twelve thousand three hundred and fourty fifth');
+    });
+    test('1000001', () {
+      expect(1000001.toWordsOrdinal(), 'one million and first');
+    });
+    
+    test('-1000001', () {
+      expect((-10000010).toWordsOrdinal(), 'minus ten million and tenth');
     });
   });
 }
