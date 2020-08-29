@@ -35,7 +35,7 @@ void main() {
       expect(1234.toWords(), 'one thousand two hundred and thirty four');
     });
     test('12345', () {
-      expect(12345.toWords(), 'twelve thousand three hundred and fourty five');
+      expect(12345.toWords(), 'twelve thousand three hundred and forty five');
     });
     test('1000001', () {
       expect(1000001.toWords(), 'one million and one');
@@ -83,7 +83,7 @@ void main() {
       expect(1234.toWordsOrdinal(), 'one thousand two hundred and thirty fourth');
     });
     test('12345', () {
-      expect(12345.toWordsOrdinal(), 'twelve thousand three hundred and fourty fifth');
+      expect(12345.toWordsOrdinal(), 'twelve thousand three hundred and forty fifth');
     });
     test('1000001', () {
       expect(1000001.toWordsOrdinal(), 'one million and first');

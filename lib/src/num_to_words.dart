@@ -9,7 +9,7 @@ final List<String> _units = [
 ];
 
 final List<String> _tens = [
-  '', 'ten', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+  '', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
 ];
 
 final List<String> _thousandPowers = [
