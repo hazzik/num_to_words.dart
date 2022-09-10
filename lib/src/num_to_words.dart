@@ -1,16 +1,51 @@
 import 'dart:math';
 
 final List<String> _units = [
-  '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 
-  'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'
+  '',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen',
+  'eighteen',
+  'nineteen'
 ];
 
 final List<String> _tens = [
-  '', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
+  '',
+  'ten',
+  'twenty',
+  'thirty',
+  'forty',
+  'fifty',
+  'sixty',
+  'seventy',
+  'eighty',
+  'ninety'
 ];
 
 final List<String> _thousandPowers = [
-  '', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion'
+  '',
+  'thousand',
+  'million',
+  'billion',
+  'trillion',
+  'quadrillion',
+  'quintillion',
+  'sextillion',
+  'septillion'
 ];
 
 final Map<num, String> _ordinalExceptions = {
@@ -23,7 +58,7 @@ final Map<num, String> _ordinalExceptions = {
   12: 'twelfth'
 };
 
-num _collectParts(num n,int d, String s, List<String> parts) {
+num _collectParts(num n, int d, String s, List<String> parts) {
   if (n < d) return n;
 
   _collectPartsUnderAThousand(n ~/ d, parts);
@@ -32,7 +67,7 @@ num _collectParts(num n,int d, String s, List<String> parts) {
   return n % d;
 }
 
-void _collectPartsUnderAThousand(num n,List<String> parts, [bool addAnd = false, bool isOrdinal = false]) {
+void _collectPartsUnderAThousand(num n, List<String> parts, [bool addAnd = false, bool isOrdinal = false]) {
   if (n >= 100) {
     parts.add(_units[n ~/ 100]);
     parts.add('hundred');
@@ -44,7 +79,7 @@ void _collectPartsUnderAThousand(num n,List<String> parts, [bool addAnd = false,
     parts.add(_tens[n ~/ 10]);
     n %= 10;
   }
-  
+
   if (n > 0) {
     if (isOrdinal) {
       parts.add(_ordinalExceptions[n] ?? ('${_units[n as int]}th'));
@@ -60,7 +95,7 @@ extension IntToWords on int {
   String toWords() => _toWords(false);
 
   String toWordsOrdinal() => _toWords(true);
-  
+
   String _toWords(bool isOrdinal) {
     if (this == 0) return isOrdinal ? 'zeroth' : 'zero';
 

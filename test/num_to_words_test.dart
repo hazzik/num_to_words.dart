@@ -1,4 +1,3 @@
-
 import 'package:num_to_words/num_to_words.dart';
 import 'package:test/test.dart';
 
@@ -6,10 +5,10 @@ void main() {
   group('english', () {
     test('1', () {
       expect(1.toWords(), 'one');
-    }); 
+    });
     test('0', () {
       expect(0.toWords(), 'zero');
-    }); 
+    });
     test('10', () {
       expect(10.toWords(), 'ten');
     });
@@ -54,16 +53,16 @@ void main() {
   group('english ordinal', () {
     test('0', () {
       expect(0.toWordsOrdinal(), 'zeroth');
-    }); 
+    });
     test('1', () {
       expect(1.toWordsOrdinal(), 'first');
-    }); 
+    });
     test('2', () {
       expect(2.toWordsOrdinal(), 'second');
-    }); 
+    });
     test('3', () {
       expect(3.toWordsOrdinal(), 'third');
-    }); 
+    });
     test('10', () {
       expect(10.toWordsOrdinal(), 'tenth');
     });
@@ -97,7 +96,7 @@ void main() {
     test('1000001', () {
       expect(1000001.toWordsOrdinal(), 'one million and first');
     });
-    
+
     test('-1000001', () {
       expect((-10000010).toWordsOrdinal(), 'minus ten million and tenth');
     });
