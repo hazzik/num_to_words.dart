@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: dart-lang/setup-dart@v2
+      - uses: dart-lang/setup-dart@stable
 
       - name: Install dependencies
         run: dart pub get
