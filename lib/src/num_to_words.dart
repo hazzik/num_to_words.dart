@@ -47,12 +47,12 @@ void _collectPartsUnderAThousand(num n,List<String> parts, [bool addAnd = false,
   
   if (n > 0) {
     if (isOrdinal) {
-      parts.add(_ordinalExceptions[n] ?? (_units[n as int] + 'th'));
+      parts.add(_ordinalExceptions[n] ?? ('${_units[n as int]}th'));
     } else {
       parts.add(_units[n as int]);
     }
   } else if (isOrdinal) {
-    parts.add(parts.removeLast().replaceAll(RegExp(r'y$'), 'ie') + 'th');
+    parts.add('${parts.removeLast().replaceAll(RegExp(r'y$'), 'ie')}th');
   }
 }
 
