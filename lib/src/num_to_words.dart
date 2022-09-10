@@ -47,9 +47,9 @@ void _collectPartsUnderAThousand(num n,List<String> parts, [bool addAnd = false,
   
   if (n > 0) {
     if (isOrdinal) {
-      parts.add(_ordinalExceptions[n] ?? (_units[n] + 'th'));
+      parts.add(_ordinalExceptions[n] ?? (_units[n as int] + 'th'));
     } else {
-      parts.add(_units[n]);
+      parts.add(_units[n as int]);
     }
   } else if (isOrdinal) {
     parts.add(parts.removeLast().replaceAll(RegExp(r'y$'), 'ie') + 'th');
@@ -67,7 +67,7 @@ extension IntToWords on int {
     var n = isNegative ? -this : this;
     final parts = <String>[];
     for (var i = 7; i > 0; i--) {
-      n = _collectParts(n, pow(1000, i), _thousandPowers[i], parts);
+      n = _collectParts(n, pow(1000, i) as int, _thousandPowers[i], parts) as int;
     }
     _collectPartsUnderAThousand(n, parts, parts.isNotEmpty, isOrdinal);
     if (isNegative) {
