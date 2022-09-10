@@ -1,4 +1,4 @@
-## 1.0.0
+## 1.0.1
 - Migrate to sound Null Safety
 
 ## 0.0.3
