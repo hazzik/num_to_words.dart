@@ -91,9 +91,15 @@ void _collectPartsUnderAThousand(num n, List<String> parts, [bool addAnd = false
   }
 }
 
+/// An extension on integral number to provide conversion methods
 extension IntToWords on int {
+
+  /// An extension method to convert a number to its words representation
+  /// For ex. 111 will be converted to "one hundred and eleven"
   String toWords() => _toWords(false);
 
+  /// An extension method to convert a number to its ordinal words representation
+  /// For ex. 111 will be converted to "one hundred and eleventh"
   String toWordsOrdinal() => _toWords(true);
 
   String _toWords(bool isOrdinal) {
