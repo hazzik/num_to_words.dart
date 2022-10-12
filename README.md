@@ -1,5 +1,9 @@
 A dart library to convert a number to its representation in words
 
+## Sponsorship
+
+If you like the library please consider [supporting my work](https://github.com/sponsors/hazzik).
+
 ## Usage
 
 A simple usage example:
