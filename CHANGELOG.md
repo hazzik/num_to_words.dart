@@ -1,3 +1,7 @@
+## 1.1.1
+
+* Move renovate.json to .github (#17)
+
 ## 1.1.0
 
 * Reformat code
@@ -7,6 +11,7 @@
 * Update dart-lang/setup-dart action to v1.4 (#10)
 * Update dependency lints to v3 (#13)
 * Update dependency dart to v3 (#11)
+* Fix publishing from action (#15)
 
 ## 1.0.1
 * Migrate to sound Null Safety (#3)
