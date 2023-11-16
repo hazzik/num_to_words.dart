@@ -1,6 +1,6 @@
 name: num_to_words
 description: An extension method to convert an integer number to its representation in words
-version: 1.0.1
+version: 1.1.0
 repository: https://github.com/hazzik/num_to_words.dart
 
 environment:
