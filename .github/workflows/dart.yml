@@ -27,23 +27,13 @@ jobs:
 
     needs: test
 
+    permissions:
+      id-token: write
+
     if: ${{ github.ref_type == 'tag' }}
 
     steps:
       - uses: actions/checkout@v4
       - uses: dart-lang/setup-dart@v1.4
-      - name: Setup credentials
-        run: | 
-          mkdir -p ~/.pub-cache 
-          cat <<EOF > ~/.pub-cache/credentials.json
-          {
-            "refreshToken":"${{ secrets.PUB_DEV_REFRESH_TOKEN }}",
-            "accessToken":"expired",
-            "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
-            "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
-            "expiration": 0
-          }
-          EOF
-
       - name: Publish package
         run: dart pub publish -f
