@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1.4
+      - uses: dart-lang/setup-dart@v1.8.2
 
       - name: Install dependencies
         run: dart pub get
@@ -34,6 +34,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1.4
+      - uses: dart-lang/setup-dart@v1.8.2
       - name: Publish package
         run: dart pub publish -f
